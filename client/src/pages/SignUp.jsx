@@ -23,7 +23,7 @@ const SignUp = () => {
       e.preventDefault()
       setLoading(true)
       const res = await axios.post('/api/auth/signup',formData)
-      const data = res.data
+      const data = await res.data
       if(data.success === false){
       setError(data.message)
       setLoading(false)
